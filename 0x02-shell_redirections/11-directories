@@ -1,6 +1,2 @@
 #!/bin/bash
-<<<<<<< HEAD
-find . -type d ! -path . -print
-=======
-find . -type d ! -path . -print 
->>>>>>> 43aa88fa4dee46d7c3af98c7071123c8c118a4a5
+find /directory/ -maxdepth 1 -type d -print| wc -l
