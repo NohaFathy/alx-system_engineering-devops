@@ -1,6 +1,13 @@
-cript that sets up a few firewall rules on web-01.
-ufw default deny incoming
-ufw allow 22/tcp
-ufw allow 80/tcp
-ufw allow 443/tcp
-ufw enable
+#!/usr/bin/bash
+# install the ufw firewall and setup a few rules
+
+sudo apt-get -y update
+sudo apt-get -y upgrade
+sudo apt-get -y install ufw
+sudo ufw enable
+sudo ufw default deny
+sudo ufw allow ssh
+sudo ufw allow http
+sudo ufw allow https
+sudo ufw reload
+
