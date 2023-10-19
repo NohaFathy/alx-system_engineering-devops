@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# Change the ownership of the Nginx process to the nginx user.
+chown -R nginx:nginx /usr/sbin/nginx /etc/nginx
+
+# Change the Nginx configuration file to specify the nginx user.
+sed -i 's/user nginx;$/user nginx;/g' /etc/nginx/nginx.conf
+
+# Restart the Nginx service.
+service nginx restart
+
