@@ -3,8 +3,9 @@
 # Change the ownership of the Nginx process to the nginx user.
 chown -R nginx:nginx /usr/sbin/nginx /etc/nginx
 
-# Change the Nginx configuration file to specify the nginx user.
+# Change the Nginx configuration file to specify the nginx user and listen on port 8080.
 sed -i 's/user nginx;$/user nginx;/g' /etc/nginx/nginx.conf
+sed -i 's/listen 80;/listen 8080;/g' /etc/nginx/nginx.conf
 
 # Restart the Nginx service.
 service nginx restart
